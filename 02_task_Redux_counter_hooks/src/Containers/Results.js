@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { storeResult, removeResult } from '../actions/actions';
+import './results.css'
 
 
 const Results = () => {
