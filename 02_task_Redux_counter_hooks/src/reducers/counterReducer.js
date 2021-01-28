@@ -13,9 +13,14 @@ const counterReducer = (state = initialState, action) => {
         return {...state, counter: state.counter -1}  
       }       
     case  actionTypes.ADDFIVE:
-      return {...state, counter: state.counter +5}
+      return {...state, counter: state.counter +action.value}
     case actionTypes.REMOVEFIVE:
-      return {...state, counter: state.counter -5}
+      if(state.counter <=0) {
+        return {...state, counter:0}
+      }
+      else {
+        return {...state, counter: state.counter -action.value} 
+      }       
     case actionTypes.RESET:
       return {...state, counter: 0}
   }

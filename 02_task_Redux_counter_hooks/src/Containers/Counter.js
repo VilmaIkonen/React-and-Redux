@@ -1,16 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import * as actionTypes from '../actions/actions'
+import { increase, decrease, addFive, removeFive, reset } from '../actions/actions';
 
-const increase = () => ({type: actionTypes.INCREASE});
-const decrease = () => ({type: actionTypes.DECREASE});
-const addFive = () => ({type: actionTypes.ADDFIVE});
-const removeFive = () => ({type: actionTypes.REMOVEFIVE});
-const reset = () => ({type: actionTypes.RESET});
 
 const Counter = () => {
 
-  const counter = useSelector(state => state.counter); // in class comp: mapStateToProps
+  const counter = useSelector(state => state.ctr.counter); // in class comp: mapStateToProps
 
   const dispatch = useDispatch();
 
