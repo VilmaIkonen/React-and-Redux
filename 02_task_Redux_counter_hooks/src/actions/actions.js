@@ -1,0 +1,5 @@
+export const INCREASE = "INCREASE"
+export const DECREASE = "DECREASE"
+export const ADDFIVE = "ADDFIVE"
+export const REMOVEFIVE = "REMOVEFIVE"
+export const RESET = "RESET"
