@@ -1,7 +1,9 @@
 import * as actionType from '../actions/actions';
 
+// Reducer always needs state to work with and action that trickers it
 const reducer = (state = initialState, action) => {
 
+  // Switch - case good solution for long, nested if/else statements.
   switch(action.type) {
     case actionType.ADD:       
       return {

@@ -24,7 +24,7 @@ const mapStateToProps = (state) => {
   }
 };
 
-// Actions and dispatch:
+// Actions and dispatch. Props creation for <button>s
 const mapDispatchToProps = (dispatch) => {
   return {
     addOne: () => dispatch({type: actionType.ADD}),
@@ -33,4 +33,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+// Order of functions matters here!
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
