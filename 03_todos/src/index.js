@@ -10,12 +10,12 @@ import App from './App';
 const rootReducer = combineReducers({
   in: inputReducer,
   ls: listReducer
-})
+});
 
 const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
