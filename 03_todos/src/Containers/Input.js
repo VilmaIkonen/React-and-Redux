@@ -7,20 +7,22 @@ const Input = () => {
   const input = useSelector(state => state.in.input);
   const dispatch = useDispatch();
 
-  const handleChange = event => dispatch(updateInput());
-
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(storeTodo());     
+    dispatch(updateInput());     
+  }
+
+  const handleChange = (event) => {
+    dispatch(storeTodo(input))
   }
 
   return (
    <form onSubmit={handleSubmit}>    
       <input
-        name='input'
-        value={input}
-        onChange
+        name='input'       
+        onChange={handleChange}
         required
+        // NB! value={input} prevents writing into input field!
       />
     </form>
   );

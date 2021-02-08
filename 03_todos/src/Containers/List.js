@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { storeTodo, doneTodo, deleteTodo } from '../actions/actions'
 
@@ -12,8 +13,10 @@ const List = () => {
     <div>
     <button onClick={() => dispatch(storeTodo(currentInput))}>Add item to the list</button>
       <ul>
-      {todoList.map((item) => {
-        <li onClick={() => dispatch(deleteTodo(item.id))} key={item.id}>{item.value}</li>
+      {todoList.map((todoItem) => {
+        <li onClick={() => dispatch(deleteTodo(todoItem.id))} key={todoItem.id}>
+        {todoItem.payload}
+        </li>
       })}
       </ul>
     </div>

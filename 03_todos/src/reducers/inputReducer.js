@@ -1,5 +1,9 @@
 import * as actionTypes from '../actions/actions'
 
+const initialState = {
+  input: ''
+}
+
 const inputReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.UPDATE_INPUT:
@@ -7,9 +11,5 @@ const inputReducer = (state = initialState, action) => {
   }
   return state;
 };
-
-const initialState = {
-  input: ''
-}
 
 export default inputReducer;
