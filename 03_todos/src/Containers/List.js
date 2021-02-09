@@ -6,7 +6,7 @@ const List = () => {
 
   const todos = useSelector((state)=> state.ls.todos);
   const dispatch = useDispatch();
-  const currentInput = useSelector((state) => state.in.state);
+  const currentInput = useSelector((state) => state.in.input);
 
   return (
     <div>

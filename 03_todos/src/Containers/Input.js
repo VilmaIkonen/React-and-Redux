@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateInput, storeTodo } from '../actions/actions';
+import { updateInput, storeTodo } from '../actions/actions'
 
 const Input = () => {
 
@@ -9,7 +9,7 @@ const Input = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
-    axios.post("http://localhost:3001/db", todo);
+    axios.post("http://localhost:3001/db", input);
     window.location.reload();
   }
 
