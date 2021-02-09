@@ -19,7 +19,7 @@ const Input = () => {
   }
 
   return (
-   <form onSubmit={handleSubmit}>    
+   <form submit={handleSubmit}>    
       <input
         name='input'       
         onChange={handleChange}
