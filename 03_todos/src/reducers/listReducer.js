@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actions'
 
 const initialState = {
-  todoList: [{
+  todo: [{
     id:'',
     text: '',
     completed: false
@@ -9,17 +9,17 @@ const initialState = {
 }
 
 // // setting new id:
-// function newTodoId (todoList) {
-//   const latestId = todoList.map((todo) => Math.max(...todoList(todo => todo.id)) +1);
+// function newTodoId (todos) {
+//   const latestId = todos.map((todo) => Math.max(...todos(todo => todo.id)) +1);
 //   return latestId +1;
 // }
 
 const listReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.STORE_TODO:
-      return {...state, todoList: state.todoList.concat({
-        // id: newTodoId(state.todoList), 
-        id: state.todoList.id,
+      return {...state, todo: state.todo.concat({
+        // id: newTodoId(state.todo), 
+        id: state.todo.id,
         text: action.payload,
         completed: false
       })
@@ -27,8 +27,8 @@ const listReducer = (state = initialState, action) => {
     case actionTypes.DONE_TODO:
       return {}
     case actionTypes.DELETE_TODO:
-      const updatedTodoList = state.todoList.filter((todo) => todo.id !== action.payload); // filter: go through all ids, make new array with all that IS NOT action.payload. "Pushes" the filtered out from the array
-    return {...state, todoList: updatedTodoList} 
+      const updatedTodo = state.todo.filter((todo) => todo.id !== action.payload); // filter: go through all ids, make new array with all that IS NOT action.payload. "Pushes" the filtered out from the array
+    return {...state, todo: updatedTodo} 
     }
   return state;
 };
