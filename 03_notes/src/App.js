@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import './App.css';
 import List from './containers/List';
 import { getAll, createNote } from './actions/actions';
 
 const App = () => {
 
-  const [ note, setNote ] = useState([{ text: '', completed: false }]);
+  const [ note, setNote ] = useState({ id: '', text: '', completed: false });
 
   const dispatch = useDispatch();
 
@@ -18,15 +17,15 @@ const App = () => {
     event.preventDefault();
 
     dispatch(createNote(note));
-    clear();
+    clearInput();
   }
 
-  const clear = () => {
+  const clearInput = () => {
     setNote({text: ''});
   }
 
   return (
-    <div>
+    <div className='container'>
       <h1>List of things</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -39,7 +38,7 @@ const App = () => {
           Add note
         </button>
       </form>
-      <List/>        
+      <List/>
     </div>
   );
 };
