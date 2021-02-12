@@ -23,7 +23,7 @@ export const createNote = (note) => async(dispatch) => {
 
 export const toggleNote = (id, note) => async(dispatch) => {
   try {
-    const {data} = await api.createNote(id, note);
+    const {data} = await api.toggleNote(id, note);
     dispatch({type: TOGGLE_NOTE, payload: data});
   } 
   catch (err) {

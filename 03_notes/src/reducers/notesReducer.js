@@ -1,6 +1,6 @@
 import { GET_ALL, CREATE_NOTE, TOGGLE_NOTE, DELETE_NOTE } from '../constants/actionConstants';
 
-const reducer = (notes = [], action) => {
+export default (notes = [], action) => {
   
   switch (action.type) {
     case GET_ALL:
@@ -16,5 +16,6 @@ const reducer = (notes = [], action) => {
   
 };
 
-export default reducer;
+
+
 

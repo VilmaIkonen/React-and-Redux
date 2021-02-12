@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>List of all</h1>
+      <h1>List of things</h1>
       <form onSubmit={handleSubmit}>
         <input
           name='text'

@@ -1,11 +1,11 @@
 import React from 'react';
-import './Input.css'
+import './List.css';
 
-const Input = ({ note, setCompleted }) => {
+const Input = ({ className, note, setCompleted }) => {
 
   return (
     <div onClick={setCompleted}>    
-      <p>{note.text}</p>
+      <p className={className}>{note.text}</p>
     </div>
   );
 };
