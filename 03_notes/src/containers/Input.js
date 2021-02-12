@@ -1,27 +1,12 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
-import { addNote } from '../actions/actions'
+import './Input.css'
 
-const Input = () => {
-
-  const dispatch = useDispatch();
-
-  const handleSubmit= async (event) => {
-    event.preventDefault();
-    let text = event.target.value;
-    dispatch(addNote(text));
-    text = '';    //event target.notes.value = '';
-  }
+const Input = ({ note, setCompleted }) => {
 
   return (
-   <form onSubmit={handleSubmit}>    
-      <input
-        name='input'
-        required
-        // NB! value={input} prevents writing into input field!
-      />
-      <button type='submit'>Add note</button>
-    </form>
+    <div onClick={setCompleted}>    
+      <p>{note.text}</p>
+    </div>
   );
 };
 

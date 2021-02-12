@@ -1,8 +1,13 @@
-{"notes":
-  [
-    {"text":"text",
-    "completed": false,
-    "id": 1}, 
-    {}
+{
+  "notes": [
+    {
+      "id": 1,
+      "text": "texttexttext",
+      "completed": false
+    },
+    {
+      "text": "tttt",
+      "id": 2
+    }
   ]
 }

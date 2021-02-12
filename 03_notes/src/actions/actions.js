@@ -1,10 +1,45 @@
-export const INIT_NOTE = 'INITIALIZE_NOTE'
-export const ADD_NOTE = 'ADD_NOTE';
-export const TOGGLE_NOTE = 'TOGGLE_NOTE';
-export const DELETE_NOTE = 'DELETE_NOTE';
+import * as api from '../api/api'
+import { GET_ALL, CREATE_NOTE, TOGGLE_NOTE, DELETE_NOTE } from '../constants/actionConstants';
 
-export const initNote = () => ({type: INIT_NOTE})
-export const addNote = (currentState) => ({type: ADD_NOTE, payload: currentState});
-export const toggleNote = (id) => ({type: TOGGLE_NOTE, payload: id});
-export const deleteNote = (id) => ({type: DELETE_NOTE, payload: id});
+export const getAll = () => async(dispatch) => {
+  try {
+    const {data} = await api.getAll();
+    dispatch({type: GET_ALL, payload: data})
+  } 
+  catch (err) {
+    console.log('function getAll() ', err);
+  }
+}
+
+export const createNote = (note) => async(dispatch) => {
+  try {
+    const {data} = await api.createNote(note);
+    dispatch({type: CREATE_NOTE, payload: data});
+  } 
+  catch (err) {
+    console.log('function createNote() ', err)
+  }
+}
+
+export const toggleNote = (id, note) => async(dispatch) => {
+  try {
+    const {data} = await api.createNote(id, note);
+    dispatch({type: TOGGLE_NOTE, payload: data});
+  } 
+  catch (err) {
+    console.log('function toggleNote() ', err)  
+  }
+}
+
+export const deleteNote = (id) => async(dispatch) => {
+  try {
+    await api.deleteNote(id);
+    dispatch({type: DELETE_NOTE, payload: id});
+  } 
+  catch (err) {
+    console.log('function deleteNote() ', err)
+  }
+}
+
+
 
