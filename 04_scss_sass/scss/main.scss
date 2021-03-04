@@ -1,0 +1,93 @@
+@import 'variables';
+@import 'functions';
+
+body {
+	font-family: $font-stack;
+	color: $lightColor;
+	background-color: $bgColor1;
+}
+
+header,
+footer {
+	background-color: $darkColor;
+}
+
+nav {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		display: inline-block;
+		margin: 0.5rem 1rem;
+	}
+	a {
+		display: block;
+		padding: 0.5rem 1rem;
+		text-decoration: none;
+		color: $lightColor;
+
+		&:hover {
+			color: rgb(169, 106, 228);
+		}
+	}
+}
+
+.section {
+	min-height: 2rem;
+	padding: 1.5rem;
+
+	&-1 {
+		background-color: aquamarine;
+		h2 {
+			color: rgb(54, 40, 54);
+		}
+		a {
+			@include transition(all 1s ease);
+		}
+	}
+	&-2 {
+		background-color: blueviolet;
+		h2 {
+			color: rgb(31, 68, 31);
+		}
+	}
+}
+
+/*.btn {
+	padding: 0.5rem 1rem;
+	font-family: $font-stack;
+	font-size: small;
+}
+.btn-light {
+	@extend .btn;
+	background-color: burlywood;
+}
+.btn-dark {
+	@extend .btn;
+	background-color: grey;
+} */
+
+.btn-common {
+	padding: 0.5rem 1rem;
+	font-family: $font-stack;
+	color: $lightColor;
+	font-weight: bolder;
+}
+
+.btn {
+	@extend .btn-common;
+	&-light {
+		background-color: $bgColor1;
+		&:hover {
+			background: darken($bgColor1, 25%);
+		}
+	}
+	&-dark {
+		background-color: $darkColor;
+		&:hover {
+			background: lighten($darkColor, 25%);
+		}
+	}
+}
