@@ -1,0 +1,22 @@
+.main-navigation {
+	text-align: center;
+	margin: 2rem auto;
+	font-family: $fontText;
+	font-weight: bold;
+	nav ul {
+		list-style-type: none;
+		li {
+			display: inline-block;
+			margin: 0 2rem;
+			a {
+				padding: 0.5rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: $colorTextDark;
+				&:hover {
+					color: $colorHover;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+.products {
+	position: relative;
+	height: 100%;
+}
+li {
+	list-style-type: none;
+	.product {
+		border-bottom: 1px solid white;
+		.productDetails {
+			color: $colorTextLight;
+			padding-bottom: 1rem;
+		}
+	}
+}

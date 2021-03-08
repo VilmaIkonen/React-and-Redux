@@ -4,7 +4,10 @@ import { removeProduct } from "../store/actions";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart);
+
   const dispatch = useDispatch();
+
+  const total = cartItems.reduce((total, cartItem) => total + cartItem.price * cartItem.quantity, 0);
 
   return (
     <>
@@ -14,7 +17,7 @@ const Cart = () => {
         <ul>
           {cartItems.map((cartItem) => (
             <li key={cartItem.id}>
-              <div>
+              <div className="cartProduct">
                 <strong>{cartItem.title}</strong> - {cartItem.price}€ (
                 {cartItem.quantity}{cartItem.style})
               </div>
@@ -26,6 +29,9 @@ const Cart = () => {
             </li>
           ))}
         </ul>
+        <div className="total">
+          Total: {total} €
+        </div>
       </main>
     </>
   );

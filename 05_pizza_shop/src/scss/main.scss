@@ -1,25 +1,8 @@
 @import 'variables';
+@import 'navigation';
+@import 'products';
+@import 'cart';
 
-.main-navigation {
-	text-align: center;
-	margin: 2rem auto;
-	nav ul {
-		list-style-type: none;
-		li {
-			display: inline-block;
-			margin: 0 2rem;
-			a {
-				padding: 0.5rem 1rem;
-				text-decoration: none;
-				text-transform: uppercase;
-				color: $colorTextDark;
-				&:hover {
-					color: $colorHover;
-				}
-			}
-		}
-	}
-}
 main {
 	margin: 0 auto;
 	text-align: center;
@@ -28,20 +11,16 @@ main {
 	height: 100vh;
 	padding: 3rem;
 }
-h1 {
-	color: red;
-}
+h1,
 h2 {
+	font-family: $fontHeading;
 	color: $colorTextLight;
+	padding-bottom: 2rem;
 }
-button {
+button,
+input,
+p {
 	padding: 0.5rem 1rem;
-}
-
-/* PRODUCTS */
-li {
-	list-style-type: none;
-	.productDetails {
-		color: $colorTextLight;
-	}
+	margin-bottom: 2rem;
+	font-family: $fontText;
 }

@@ -15,8 +15,8 @@ const Products = () => {
 
   return (
     <>
-      <main className="products">
-      <h2>Our delicious pizzas</h2>
+      <main className="products">  
+        <h2>Our delicious pizzas</h2>
         <input type="text" placeholder="Search" onChange={handleChange} />
         <ul>
           {products
@@ -25,21 +25,23 @@ const Products = () => {
             )
             .map((product) => (
               <li key={product.id}>
-                <div  className='productDetails'>
-                  <p>
-                    <strong>{product.title} </strong>
-                    {product.desc}
-                  </p>
-                  {product.price}€
-                </div>
-                <div>
-                  <button onClick={() => dispatch(addProduct(product))}>
-                    Add to Cart
-                  </button>
+                <div className="product">
+                  <div  className='productDetails'>
+                    <p>
+                      <strong>{product.title} </strong>
+                      {product.desc}
+                    </p>
+                    {product.price}€
+                  </div>
+                  <div>
+                    <button onClick={() => dispatch(addProduct(product))}>
+                      Add to Cart
+                    </button>
+                  </div>
                 </div>
               </li>
             ))}
-        </ul>
+        </ul> 
       </main>
     </>
   );
