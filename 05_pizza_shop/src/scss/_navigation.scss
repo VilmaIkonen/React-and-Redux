@@ -1,8 +1,10 @@
 .main-navigation {
 	text-align: center;
-	margin: 2rem auto;
+	margin: 0 auto;
+	padding: 2rem;
 	font-family: $fontText;
 	font-weight: bold;
+	background-color: #070707;
 	nav ul {
 		list-style-type: none;
 		li {
@@ -12,7 +14,7 @@
 				padding: 0.5rem 1rem;
 				text-decoration: none;
 				text-transform: uppercase;
-				color: $colorTextDark;
+				color: $colorTextLight;
 				&:hover {
 					color: $colorHover;
 				}

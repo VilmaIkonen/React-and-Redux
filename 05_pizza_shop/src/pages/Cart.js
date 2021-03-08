@@ -11,7 +11,7 @@ const Cart = () => {
 
   return (
     <>
-      <main className="cart">
+      <main>
       <h2>Your pizza order: </h2>
         {cartItems.length <= 0 && <p>No Item in the Cart!</p>}
         <ul>

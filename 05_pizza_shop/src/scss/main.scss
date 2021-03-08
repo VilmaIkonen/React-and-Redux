@@ -3,6 +3,11 @@
 @import 'products';
 @import 'cart';
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 main {
 	margin: 0 auto;
 	text-align: center;
